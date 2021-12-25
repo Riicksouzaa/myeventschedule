@@ -5,12 +5,17 @@
 	<uses-permission android:name="android.permission.INTERNET" />
 
 	<application
-		android:allowBackup="true"
 		android:icon="@mipmap/ic_launcher"
 		android:label="@string/app_name"
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
-		android:theme="@style/Theme.MyEventSchedule">
+		android:theme="@style/Theme.MyEventSchedule"
+		android:usesCleartextTraffic="true">
+		<activity
+			android:name=".view.ui.EventDetailActivity"
+			android:exported="false"
+			android:label="@string/title_activity_event_detail"
+			android:theme="@style/Theme.MyEventSchedule.NoActionBar" />
 		<activity
 			android:name=".view.ui.MainActivity"
 			android:exported="true">

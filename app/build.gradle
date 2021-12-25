@@ -8,7 +8,7 @@ android {
 
 	defaultConfig {
 		applicationId "com.rsdev.myeventschedule"
-		minSdk 22
+		minSdk 23
 		targetSdk 31
 		versionCode vsCode as Integer
 		versionName vsName
@@ -58,6 +58,11 @@ dependencies {
 	/** COROUTINES */
 	implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
 	implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+
+	/** PICASSO */
+	implementation 'com.squareup.picasso:picasso:2.71828'
+	implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+	implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
 
 	/** TESTS */
 	testImplementation 'junit:junit:4.+'

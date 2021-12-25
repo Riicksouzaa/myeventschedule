@@ -1,4 +1,4 @@
-package com.rsdev.myeventschedule.view.ui
+package com.rsdev.myeventschedule.view.ui.eventinfo
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -7,17 +7,17 @@ import com.rsdev.myeventschedule.api.RetrofitService
 import com.rsdev.myeventschedule.api.Status
 import com.rsdev.myeventschedule.data.EventsDataSource
 import com.rsdev.myeventschedule.data.EventsRepository
-import com.rsdev.myeventschedule.model.events.Events
+import com.rsdev.myeventschedule.model.event.Event
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
-class EventsViewModel() :
+class EventInfoViewModel() :
     ViewModel() {
     private val eventsRepository = EventsRepository(EventsDataSource(RetrofitService.create()))
 
-    val eventState = MutableStateFlow(EventsApiState(Status.LOADING, mutableListOf(Events()), null))
+    val eventState = MutableStateFlow(EventsApiState(Status.LOADING, mutableListOf(Event()), null))
 
     init {
         getAllEvents()
@@ -26,7 +26,7 @@ class EventsViewModel() :
     private fun getAllEvents() {
         eventState.value = EventsApiState.loading()
         viewModelScope.launch {
-            eventsRepository.allEvents
+            eventsRepository.allEvent
                 .catch {
                     eventState.value = EventsApiState.error(it.message.toString())
                 }
