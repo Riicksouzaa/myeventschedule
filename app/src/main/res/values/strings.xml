@@ -10,4 +10,16 @@
 
 	<string name="hello_first_fragment">Hello first fragment</string>
 	<string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+	<string name="go_to_location">Go to location</string>
+	<string name="set_checkin">set checkin</string>
+	<string name="event_details_logo">Event Details Logo</string>
+	<string name="event_date">Data do evento:</string>
+	<string name="price">Valor da entrada:</string>
+	<string name="check_in_realize">Realize seu Check-In</string>
+	<string name="check_in_name">Nome</string>
+	<string name="check_in_email">Email</string>
+	<string name="check_in_submit">Fazer check-in</string>
+
+	<string name="error_empty_name">Preenchimento do nome é obrigatório</string>
+	<string name="error_empty_email">Preenchimento do email é obrigatório</string>
 </resources>

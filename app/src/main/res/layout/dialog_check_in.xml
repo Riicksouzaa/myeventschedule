@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:paddingVertical="30dp"
+	android:paddingHorizontal="16dp">
+
+	<TextView
+		android:id="@+id/textView"
+		style="?attr/textAppearanceHeadline6"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="50dp"
+		android:layout_marginTop="16dp"
+		android:layout_marginEnd="50dp"
+		android:text="@string/check_in_realize"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/textInputLayout"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:hint="@string/check_in_name"
+		android:labelFor="@+id/check_in_name"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textView">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/check_in_name"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:inputType="text" />
+
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/textInputLayout2"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:hint="@string/check_in_email"
+		android:labelFor="@+id/check_in_email"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/check_in_email"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:inputType="textEmailAddress" />
+
+	</com.google.android.material.textfield.TextInputLayout>
+
+
+	<Button
+		android:id="@+id/btn_check_in_submit"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="30dp"
+		android:text="@string/check_in_submit"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
