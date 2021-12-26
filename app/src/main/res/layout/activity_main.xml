@@ -4,14 +4,14 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:context=".view.ui.MainActivity">
+	tools:context=".view.ui.activity.MainActivity">
 
-	<com.google.android.material.progressindicator.CircularProgressIndicator
-		android:id="@+id/event_progress_indicator"
+	<TextView
+		android:id="@+id/event_api_error"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:indeterminate="true"
 		android:visibility="gone"
+		tools:text="Houve um erro"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
 		android:layout_height="wrap_content"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		tools:listitem=""
+		tools:listitem="@layout/event_info_list_view_item"
 		app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

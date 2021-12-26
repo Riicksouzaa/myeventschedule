@@ -12,12 +12,17 @@
 		android:theme="@style/Theme.MyEventSchedule"
 		android:usesCleartextTraffic="true">
 		<activity
-			android:name=".view.ui.EventDetailActivity"
+			android:name=".view.ui.activity.EventDetailActivity"
 			android:exported="false"
 			android:label="@string/title_activity_event_detail"
-			android:theme="@style/Theme.MyEventSchedule.NoActionBar" />
+			android:parentActivityName=".view.ui.activity.MainActivity"
+			android:theme="@style/Theme.MyEventSchedule.NoActionBar">
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value=".view.ui.activity.MainActivity" />
+		</activity>
 		<activity
-			android:name=".view.ui.MainActivity"
+			android:name=".view.ui.activity.MainActivity"
 			android:exported="true">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />

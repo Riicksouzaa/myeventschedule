@@ -6,8 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.rsdev.myeventschedule.R
 import com.rsdev.myeventschedule.databinding.EventInfoListViewItemBinding
 import com.rsdev.myeventschedule.model.event.Event
-import com.rsdev.myeventschedule.view.ui.EventDetailActivity
+import com.rsdev.myeventschedule.view.ui.activity.EventDetailActivity
 import com.squareup.picasso.Picasso
+
+const val EXTRA_EVENT_ID = "extra_event_id"
 
 class EventInfoViewHolder(
     private val binding: EventInfoListViewItemBinding,
@@ -17,7 +19,9 @@ class EventInfoViewHolder(
 
     fun bind(event: Event) {
         binding.eventCardView.setOnClickListener {
-            val intent = Intent(context.applicationContext, EventDetailActivity::class.java)
+            val intent = Intent(context.applicationContext, EventDetailActivity::class.java).apply {
+                putExtra(EXTRA_EVENT_ID, event)
+            }
             context.startActivity(intent)
         }
         with(event) {
@@ -25,7 +29,7 @@ class EventInfoViewHolder(
             binding.eventDateDay.text = getDay()
             binding.eventDateMonth.text = getMonth()
             Picasso.get().load(image)
-                .placeholder(context.getDrawable(R.drawable.ic_launcher_background)!!)
+                .placeholder(R.drawable.ic_no_image_placeholder)
                 .into(binding.eventImage)
         }
     }

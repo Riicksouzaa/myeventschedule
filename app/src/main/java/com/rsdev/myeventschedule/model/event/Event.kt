@@ -1,7 +1,7 @@
 package com.rsdev.myeventschedule.model.event
 
-import java.text.SimpleDateFormat
-import java.util.*
+import com.rsdev.myeventschedule.utils.highorder.formatToDate
+import java.io.Serializable
 
 data class Event(
     val id: Long = 0,
@@ -12,22 +12,9 @@ data class Event(
     val latitude: String = "",
     val price: Double = 0.0,
     val title: String = ""
-) {
+) : Serializable {
 
-    fun getMonth(): String = try {
-        val sdf = SimpleDateFormat("MMM")
-        val netDate = Date(date)
-        sdf.format(netDate).uppercase().take(3)
-    } catch (e: Exception) {
-        e.toString()
-    }
+    fun getMonth(): String = date.formatToDate("MMM").uppercase().take(3)
 
-    fun getDay(): String = try {
-        val sdf = SimpleDateFormat("dd")
-        val netDate = Date(date)
-        sdf.format(netDate)
-    } catch (e: Exception) {
-        e.toString()
-    }
-
+    fun getDay(): String = date.formatToDate("dd")
 }
