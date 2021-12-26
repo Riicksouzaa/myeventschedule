@@ -5,6 +5,7 @@ import android.content.Context
 import android.os.Bundle
 import com.rsdev.myeventschedule.R
 import com.rsdev.myeventschedule.databinding.DialogCheckInBinding
+import com.rsdev.myeventschedule.utils.highorder.isEmailValid
 import com.rsdev.myeventschedule.utils.highorder.setupError
 
 class CheckInDialog(context: Context, val callback: (name: String, email: String) -> Unit) :
@@ -22,6 +23,7 @@ class CheckInDialog(context: Context, val callback: (name: String, email: String
             when {
                 name.text.isNullOrEmpty() -> name.setupError(context.getString(R.string.error_empty_name))
                 email.text.isNullOrEmpty() -> email.setupError(context.getString(R.string.error_empty_email))
+                !email.isEmailValid() -> email.setupError(context.getString(R.string.error_invalid_email))
                 else -> {
                     callback(name.text.toString(), email.text.toString())
                 }

@@ -41,3 +41,6 @@ fun TextInputEditText.setupError(message: String) {
     this.error = message
     this.requestFocus()
 }
+
+fun TextInputEditText.isEmailValid(): Boolean =
+    android.util.Patterns.EMAIL_ADDRESS.matcher(this.text.toString()).matches()
