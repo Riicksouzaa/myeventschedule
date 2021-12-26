@@ -22,4 +22,5 @@
 
 	<string name="error_empty_name">Preenchimento do nome é obrigatório</string>
 	<string name="error_empty_email">Preenchimento do email é obrigatório</string>
+	<string name="error_invalid_email">O e-mail precisa ser um e-mail válido</string>
 </resources>
